@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0D1117;
+    --foreground: #ffffff;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer components {
+  .grid-background {
+    background-image: url('/grid.svg');
+    background-size: 50px 50px;
+    background-position: center;
+  }
+  
+  .grid-overlay {
+    background: linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%);
+    background-size: 50px 50px;
+  }
+}
