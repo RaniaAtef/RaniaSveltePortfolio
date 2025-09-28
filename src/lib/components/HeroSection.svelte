@@ -68,39 +68,40 @@ Rania Atef				</h1>
 			</div>
 
 			<!-- CTA Buttons -->
-			<div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 sm:mt-12 px-4 sm:px-0">
-				<a href="#work" class="group relative inline-flex items-center justify-center">
+			<div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 sm:mt-12 px-4 sm:px-0" role="group" aria-label="Main navigation actions">
+				<a href="#work" class="group relative inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-full" aria-label="View my work and projects">
 					<div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition"></div>
 					<span class="relative px-6 sm:px-8 py-3 bg-[#161B22] rounded-full inline-flex items-center justify-center w-full sm:w-auto">
 						View My Work
-						<svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
 						</svg>
 					</span>
 				</a>
 				<a
 					href="#contact"
-					class="px-6 sm:px-8 py-3 bg-[#21262D] rounded-full hover:bg-[#2D333B] transition-colors border border-[#2D333B] hover:border-gray-600 text-center"
+					class="px-6 sm:px-8 py-3 bg-[#21262D] rounded-full hover:bg-[#2D333B] transition-colors border border-[#2D333B] hover:border-gray-600 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0D1117]"
+					aria-label="Get in touch and contact me"
 				>
 					Get in Touch
 				</a>
 			</div>
 
 			<!-- Social Links -->
-			<div class="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
+			<nav class="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12" aria-label="Social media links">
 				{#each socialLinks as social}
-					<a href={social.href} class="group relative p-2 sm:p-3 hover:text-blue-400 transition-colors" aria-label={social.name}>
-						<span class="text-xl sm:text-2xl group-hover:scale-110 transition-transform inline-block">{social.icon}</span>
+					<a href={social.href} class="group relative p-2 sm:p-3 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-lg" aria-label="Visit my {social.name} profile">
+						<span class="text-xl sm:text-2xl group-hover:scale-110 transition-transform inline-block" aria-hidden="true">{social.icon}</span>
 					</a>
 				{/each}
-			</div>
+			</nav>
 		</div>
 	</div>
 
 	<!-- Scroll Indicator -->
-	<div class="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce">
+	<div class="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce" role="img" aria-label="Scroll down to explore more content">
 		<span class="text-gray-400 text-sm mb-2 text-center">Scroll to explore</span>
-		<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+		<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
 		</svg>
 	</div>

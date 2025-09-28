@@ -12,7 +12,81 @@
     background-color: var(--background);
     color: var(--foreground);
   }
-}
+
+  /* Accessibility improvements */
+  *:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Skip link styles */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sr-only:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --background: #000000;
+      --foreground: #ffffff;
+    }
+  }
+
+  /* Color contrast improvements for better accessibility */
+  .text-gray-400 {
+    color: #9ca3af; /* Improved contrast from #6b7280 */
+  }
+
+  .text-gray-300 {
+    color: #d1d5db; /* Improved contrast from #d1d5db */
+  }
+
+  /* Ensure sufficient contrast for interactive elements */
+  .bg-\[#21262D\] {
+    background-color: #1a1f2b; /* Slightly lighter for better contrast */
+  }
+
+  .border-\[#2D333B\] {
+    border-color: #374151; /* Better contrast for borders */
+  }
 
 @layer components {
   .grid-background {
@@ -25,4 +99,5 @@
     background: linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%);
     background-size: 50px 50px;
   }
+}
 }

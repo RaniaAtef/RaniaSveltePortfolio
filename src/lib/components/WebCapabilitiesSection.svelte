@@ -109,30 +109,32 @@
 	}
 </script>
 
-<section class="py-12 sm:py-20 px-4">
+<section class="py-12 sm:py-20 px-4" aria-labelledby="capabilities-heading">
 	<div class="max-w-6xl mx-auto">
-		<h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Modern Web Capabilities</h2>
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+		<h2 id="capabilities-heading" class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Modern Web Capabilities</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list" aria-label="Web development capabilities">
 			{#each capabilities as category, index}
-				<div 
-					class="group bg-[#161B22] p-6 rounded-lg hover:bg-[#21262D] transition-all dynamic-border"
+				<article 
+					class="group bg-[#161B22] p-6 rounded-lg hover:bg-[#21262D] transition-all dynamic-border focus-within:bg-[#21262D] focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 focus-within:ring-offset-transparent"
 					on:mousemove={(e) => handleMouseMove(e, e.currentTarget, e.currentTarget.querySelector('.border-highlight'))}
 					on:mouseleave={(e) => handleMouseLeave(e.currentTarget.querySelector('.border-highlight'))}
 					style="--mouse-x: 0px; --mouse-y: 0px; --closest-edge: 0;"
+					role="listitem"
+					tabindex="0"
 				>
 					<!-- Dynamic border highlight -->
-					<div class="border-highlight"></div>
+					<div class="border-highlight" aria-hidden="true"></div>
 					
-					<div class="text-3xl mb-4">{category.icon}</div>
+					<div class="text-3xl mb-4" aria-hidden="true">{category.icon}</div>
 					<h3 class="text-xl font-bold mb-3">{category.title}</h3>
-					<ul class="space-y-2">
+					<ul class="space-y-2" role="list" aria-label="Features in {category.title}">
 						{#each category.features as feature}
-							<li class="text-gray-400 group-hover:text-gray-300 transition-colors">
+							<li class="text-gray-400 group-hover:text-gray-300 transition-colors" role="listitem">
 								{feature}
 							</li>
 						{/each}
 					</ul>
-				</div>
+				</article>
 			{/each}
 		</div>
 	</div>

@@ -6,7 +6,7 @@
 	import ContactSection from '$lib/components/ContactSection.svelte';
 </script>
 
-<main class="min-h-screen bg-[#0D1117] text-white">
+<main id="main-content" class="min-h-screen bg-[#0D1117] text-white" role="main">
 	<HeroSection />
 	<SkillsSection />
 	<ProjectsSection />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rania-svelte-portfolio-aqb6.vercel.app//sitemap.xml
